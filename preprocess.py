@@ -45,14 +45,14 @@ class image_recognition:
                                                              x_col="image_path",
                                                              y_col="labels",
                                                              target_size=(150, 150),
-                                                             class_mode=class_mode,
+                                                             class_mode=class_mode,  #label encoder
                                                              batch_size=32)
         test_datagen = ImageDataGenerator(rescale=1./255)
         test_datagenerator=test_datagen.flow_from_dataframe(dataframe=test_data,
                                                            x_col="image_path",
                                                            y_col="labels",
                                                            target_size=(150, 150),
-                                                           class_mode=class_mode,
+                                                           class_mode=class_mode,  #label encoder
                                                            batch_size=32)
         return (train_datagenerator, test_datagenerator)
     def build_model(self):
